@@ -2,7 +2,7 @@
 
 ## Our Goal
 
-The TOMCAT-C2 project provides a professional, technical environment for contributors. We prioritize technical excellence and respectful collaboration.
+The GhostCommit project provides a professional, technical environment for contributors. We prioritize technical excellence and respectful collaboration.
 
 ## Standards
 
@@ -19,6 +19,6 @@ Unacceptable behavior includes:
 
 #### Enforcement
 
-#### The project maintainers have sole authority to moderate discussions and contributions. Decisions are made at the maintainers' discretion to ensure the project remains a focused and productive environment. Reports can be sent to `tomcat7wardns@gmail.com`.
+#### The project maintainers have sole authority to moderate discussions and contributions. Decisions are made at the maintainers' discretion to ensure the project remains a focused and productive environment. Reports can be sent to `anonymous999tom7@gmail.com`.
 
 <p align="center">&copy; 2026 XTM26</p>
