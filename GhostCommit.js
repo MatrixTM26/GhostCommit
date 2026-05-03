@@ -1,110 +1,102 @@
-import { writeFile } from "fs/promises";
-import { exec } from "child_process";
-import { promisify } from "util";
+import { writeFileSync } from "fs";
+import { spawnSync } from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const ExecAsync = promisify(exec);
 const Dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const Config = {
-    TotalCommits: 500,
-    DataFile: "./Logs.json",
-    YearOffset: 1,
-    MaxWeekSpread: 52,
-    MaxDaySpread: 6,
-    DelayBetweenCommits: 50,
+    TotalCommits: 100,
+    DataFile: "./data.json",
     RetryAttempts: 3,
-    RetryDelay: 500,
-    BatchSize: 10,
-    PushAfterAll: true,
+    PushAfterAll: process.env.CI !== "true",
     Verbose: false
 };
 
-const Sleep = Ms => new Promise(Resolve => setTimeout(Resolve, Ms));
+const Git = Args => {
+    const Result = spawnSync("git", Args, {
+        cwd: Dirname,
+        encoding: "utf8",
+        maxBuffer: 1024 * 1024 * 10
+    });
+    if (Result.status !== 0) {
+        throw new Error(Result.stderr || Result.stdout || "git command failed");
+    }
+    return Result.stdout.trim();
+};
 
-const RandomInt = (Min, Max) =>
-    Math.floor(Math.random() * (Max - Min + 1)) + Min;
+const GenerateRandomPastDate = () => {
+    const Now = new Date();
+    const OneYearAgo = new Date(Now);
+    OneYearAgo.setFullYear(OneYearAgo.getFullYear() - 1);
 
-const FormatDate = Date =>
-    Date.toISOString().replace("T", " ").slice(0, 19) + " +0700";
-
-const GenerateDate = () => {
-    const Base = new Date();
-    Base.setFullYear(Base.getFullYear() - Config.YearOffset);
-    Base.setDate(
-        Base.getDate() +
-            1 +
-            RandomInt(0, Config.MaxWeekSpread) * 7 +
-            RandomInt(0, Config.MaxDaySpread)
+    const Result = new Date(
+        OneYearAgo.getTime() +
+            Math.floor(Math.random() * (Now.getTime() - OneYearAgo.getTime()))
     );
-    return FormatDate(Base);
+
+    const Pad = N => String(N).padStart(2, "0");
+    return (
+        `${Result.getFullYear()}-${Pad(Result.getMonth() + 1)}-${Pad(Result.getDate())}` +
+        `T${Pad(Result.getHours())}:${Pad(Result.getMinutes())}:${Pad(Result.getSeconds())}+07:00`
+    );
 };
 
 const ProgressBar = (Current, Total, Width = 40) => {
     const Pct = Current / Total;
     const Filled = Math.round(Pct * Width);
-    const Bar = "█".repeat(Filled) + "░".repeat(Width - Filled);
+    const Bar = "#".repeat(Filled) + "-".repeat(Width - Filled);
     const Percent = (Pct * 100).toFixed(1).padStart(5);
     process.stdout.write(`\r  [${Bar}] ${Percent}% (${Current}/${Total})`);
 };
 
-const RunGit = async Args => {
-    const { stdout } = await ExecAsync(`git ${Args}`, {
-        cwd: Dirname,
-        maxBuffer: 1024 * 1024 * 10
-    });
-    return stdout.trim();
-};
-
-const MakeCommit = async Index => {
-    const Date = GenerateDate();
-    await writeFile(
+const MakeCommit = Index => {
+    const CommitDate = GenerateRandomPastDate();
+    writeFileSync(
         path.resolve(Dirname, Config.DataFile),
-        JSON.stringify({ Date, Index }, null, 2),
+        JSON.stringify({ CommitDate, Index }, null, 2),
         "utf8"
     );
-    await RunGit(`add "${Config.DataFile}"`);
-    await RunGit(
-        `commit --allow-empty-message -m "${Date}" --date="${Date}" --no-verify`
-    );
-    if (Config.Verbose) console.log(`\n  ✔ commit #${Index + 1} → ${Date}`);
+    Git(["add", Config.DataFile]);
+    Git([
+        "commit",
+        "--allow-empty-message",
+        "-m",
+        CommitDate,
+        `--date=${CommitDate}`,
+        "--no-verify"
+    ]);
+    if (Config.Verbose)
+        process.stdout.write(`\n  OK commit #${Index + 1} -> ${CommitDate}\n`);
 };
 
-const MakeCommitWithRetry = async Index => {
+const MakeCommitWithRetry = Index => {
     for (let Attempt = 1; Attempt <= Config.RetryAttempts; Attempt++) {
         try {
-            await MakeCommit(Index);
+            MakeCommit(Index);
             return;
         } catch (Err) {
             if (Attempt === Config.RetryAttempts) {
-                console.error(
-                    `\n  ✘ Commit #${Index + 1} gagal setelah ${Config.RetryAttempts}x: ${Err.message}`
+                process.stderr.write(
+                    `\n  FAIL commit #${Index + 1} after ${Config.RetryAttempts}x: ${Err.message}\n`
                 );
                 throw Err;
             }
-            if (Config.Verbose)
-                console.warn(
-                    `\n  ⚠ Commit #${Index + 1} retry ${Attempt}/${Config.RetryAttempts}`
-                );
-            await Sleep(Config.RetryDelay * Attempt);
         }
     }
 };
 
-const Run = async () => {
-    console.log("\n🚀 Auto Commit - Advanced Mode");
-    console.log(`   Total commits : ${Config.TotalCommits}`);
-    console.log(`   Batch size    : ${Config.BatchSize}`);
-    console.log(`   Delay         : ${Config.DelayBetweenCommits}ms/commit`);
-    console.log(
-        `   Push strategy : ${Config.PushAfterAll ? "sekali di akhir" : "per batch"}\n`
+const Run = () => {
+    process.stdout.write(`\nGhostCommit\n`);
+    process.stdout.write(`  Total  : ${Config.TotalCommits}\n`);
+    process.stdout.write(
+        `  Push   : ${Config.PushAfterAll ? "after all" : "CI handles"}\n\n`
     );
 
     try {
-        await RunGit("rev-parse --is-inside-work-tree");
+        Git(["rev-parse", "--is-inside-work-tree"]);
     } catch {
-        console.error("  ✘ Bukan git repository! Jalankan 'git init' dulu.");
+        process.stderr.write("  Not a git repository. Run 'git init' first.\n");
         process.exit(1);
     }
 
@@ -114,46 +106,37 @@ const Run = async () => {
 
     for (let I = 0; I < Config.TotalCommits; I++) {
         try {
-            await MakeCommitWithRetry(I);
+            MakeCommitWithRetry(I);
             SuccessCount++;
-
-            if (!Config.PushAfterAll && (I + 1) % Config.BatchSize === 0) {
-                await RunGit("push");
-                if (Config.Verbose)
-                    console.log(
-                        `\n  📤 Pushed batch ${Math.ceil((I + 1) / Config.BatchSize)}`
-                    );
-            }
         } catch {
             FailCount++;
         }
-
         ProgressBar(I + 1, Config.TotalCommits);
-        if (I < Config.TotalCommits - 1)
-            await Sleep(Config.DelayBetweenCommits);
     }
 
-    console.log("\n\n  📤 Pushing ke remote...");
-    try {
-        await RunGit("push");
-        console.log("  ✔ Push berhasil!\n");
-    } catch (Err) {
-        console.error(`  ✘ Push gagal: ${Err.message}`);
-        console.log("  💡 Coba jalankan 'git push' manual.\n");
+    process.stdout.write("\n\n");
+
+    if (Config.PushAfterAll) {
+        process.stdout.write("  Pushing...\n");
+        try {
+            Git(["push"]);
+            process.stdout.write("  Push OK\n\n");
+        } catch (Err) {
+            process.stderr.write(`  Push failed: ${Err.message}\n`);
+            process.stderr.write("  Run 'git push' manually.\n\n");
+        }
     }
 
     const Elapsed = ((Date.now() - StartTime) / 1000).toFixed(1);
-    console.log("─".repeat(50));
-    console.log(`  ✅ Sukses  : ${SuccessCount} commit`);
-    if (FailCount > 0) console.log(`  ❌ Gagal   : ${FailCount} commit`);
-    console.log(`  ⏱ Durasi  : ${Elapsed}s`);
-    console.log(
-        `  ⚡ Speed   : ${(SuccessCount / Elapsed).toFixed(1)} commit/s`
+    process.stdout.write(`${"─".repeat(40)}\n`);
+    process.stdout.write(`  Success : ${SuccessCount} commits\n`);
+    if (FailCount > 0)
+        process.stdout.write(`  Failed  : ${FailCount} commits\n`);
+    process.stdout.write(`  Time    : ${Elapsed}s\n`);
+    process.stdout.write(
+        `  Speed   : ${(SuccessCount / Elapsed).toFixed(1)} commit/s\n`
     );
-    console.log("─".repeat(50) + "\n");
+    process.stdout.write(`${"─".repeat(40)}\n\n`);
 };
 
-Run().catch(Err => {
-    console.error("\n💥 Fatal error:", Err.message);
-    process.exit(1);
-});
+Run();

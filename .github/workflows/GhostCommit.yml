@@ -1,9 +1,0 @@
-github: XTM26
-
-name: GhostCommit
-
-on:
-    push:
-        branches: [master]
-    pull_requests:
-        branches: [master]
