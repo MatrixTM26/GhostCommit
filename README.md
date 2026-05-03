@@ -85,7 +85,7 @@ to:
 ## Usage
 
 ```bash
-node script.js
+node GhostCommit.js
 ```
 
 That is all. GhostCommit will generate commits, display a live progress bar, and push everything once it finishes.
@@ -120,7 +120,7 @@ const Config = {
 
 ```
 GhostCommit/
-├── script.js        — main script
+├── GhostCommit.js   — main script
 ├── data.json        — auto-generated, committed each run
 ├── package.json
 └── README.md
