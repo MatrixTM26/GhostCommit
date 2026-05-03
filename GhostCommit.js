@@ -32,7 +32,7 @@ const Git = Args => {
 const GenerateRandomPastDate = () => {
     const Now = new Date();
     const OneYearAgo = new Date(Now);
-    OneYearAgo.setFullYear(OneYearAgo.getFullYear() - 2);
+    OneYearAgo.setFullYear(OneYearAgo.getFullYear() - 1);
 
     const Result = new Date(
         OneYearAgo.getTime() +
@@ -91,12 +91,12 @@ const MakeCommitWithRetry = Index => {
 };
 
 const Run = () => {
-    process.stdout.write(`\nGhostCommit - Auto Commit Tool\n`);
-    process.stdout.write(`\nAUTHOR     :    XTM26\n`);
-    process.stdout.write(`\nGITHUB     :    XTM26\n`);
-    process.stdout.write(`      Total  :    ${Config.TotalCommits}\n`);
+    process.stdout.write(`\n+ GhostCommit - Auto Commit Tool +\n`);
+    process.stdout.write(` + AUTHOR     :    XTM26\n`);
+    process.stdout.write(` + GITHUB     :    XTM26\n`);
+    process.stdout.write(`       Total  :    ${Config.TotalCommits}\n`);
     process.stdout.write(
-        `      Push   :    ${Config.PushAfterAll ? "after all" : "CI handles"}\n\n`
+        `       Push   :    ${Config.PushAfterAll ? "after all" : "CI handles"}\n\n`
     );
 
     try {
