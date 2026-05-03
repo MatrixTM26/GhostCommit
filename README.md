@@ -8,7 +8,9 @@
   <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-1a1a2e?style=for-the-badge&logo=linux&logoColor=white" />
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Author-XTM26-ff6b6b?style=for-the-badge&logo=github&logoColor=white" />
-<img src="https://img.shields.io/github/stars/XTM26/HellcatAPI?style=flat-square&color=yellow">
+  <a href="https://github.com/XTM26/GhostCommit/stargazers">
+    <img src="https://img.shields.io/github/stars/XTM26/GhostCommit?style=for-the-badge&logo=apachespark&logoColor=white&color=f5a623" />
+  </a>
 
 </div>
 
@@ -22,10 +24,10 @@
 
 ```
 + GhostCommit: Auto Commit Tool +
-  + AUTHOR : XTM26
-  + GITHUB : XTM26
-    Total  : 100
-    Push   : after all
++ AUTHOR : XTM26
++ GITHUB : XTM26
+  Total  : 100
+  Push   : after all
 
   [########################################]  100.0% (100/100)
 
@@ -96,21 +98,21 @@ Open `script.js` and edit the `Config` object at the top of the file:
 
 ```js
 const Config = {
-    TotalCommits: 100,
-    DataFile: "./data.json",
-    RetryAttempts: 3,
-    PushAfterAll: true,
-    Verbose: false
+  TotalCommits: 100,
+  DataFile: "./data.json",
+  RetryAttempts: 3,
+  PushAfterAll: true,
+  Verbose: false,
 };
 ```
 
-| Key             | Default       | Description                             |
-| --------------- | ------------- | --------------------------------------- |
-| `TotalCommits`  | `100`         | Total number of commits to generate     |
-| `DataFile`      | `./data.json` | File that gets modified on each commit  |
-| `RetryAttempts` | `3`           | How many times to retry a failed commit |
-| `PushAfterAll`  | `true`        | Push all commits at the end in one go   |
-| `Verbose`       | `false`       | Print each commit date as it runs       |
+| Key | Default | Description |
+|---|---|---|
+| `TotalCommits` | `100` | Total number of commits to generate |
+| `DataFile` | `./data.json` | File that gets modified on each commit |
+| `RetryAttempts` | `3` | How many times to retry a failed commit |
+| `PushAfterAll` | `true` | Push all commits at the end in one go |
+| `Verbose` | `false` | Print each commit date as it runs |
 
 ---
 
@@ -118,7 +120,7 @@ const Config = {
 
 ```
 GhostCommit/
-├── GhostCommit.js   — main script
+├── script.js        — main script
 ├── data.json        — auto-generated, committed each run
 ├── package.json
 └── README.md
