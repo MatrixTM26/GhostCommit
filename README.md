@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-1a1a2e?style=for-the-badge&logo=linux&logoColor=white" />
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Author-XTM26-ff6b6b?style=for-the-badge&logo=github&logoColor=white" />
+<img src="https://img.shields.io/github/stars/XTM26/HellcatAPI?style=flat-square&color=yellow">
 
 </div>
 
