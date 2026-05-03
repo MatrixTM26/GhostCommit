@@ -1,3 +1,7 @@
+// GHOST COMMIT
+// AUTHOR : XTM26
+// GITHUB : XTM26
+
 import { writeFileSync } from "fs";
 import { spawnSync } from "child_process";
 import path from "path";
@@ -6,7 +10,7 @@ import { fileURLToPath } from "url";
 const Dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const Config = {
-    TotalCommits: 100,
+    TotalCommits: 500,
     DataFile: "./data.json",
     RetryAttempts: 3,
     PushAfterAll: process.env.CI !== "true",
@@ -28,7 +32,7 @@ const Git = Args => {
 const GenerateRandomPastDate = () => {
     const Now = new Date();
     const OneYearAgo = new Date(Now);
-    OneYearAgo.setFullYear(OneYearAgo.getFullYear() - 1);
+    OneYearAgo.setFullYear(OneYearAgo.getFullYear() - 2);
 
     const Result = new Date(
         OneYearAgo.getTime() +
@@ -87,10 +91,12 @@ const MakeCommitWithRetry = Index => {
 };
 
 const Run = () => {
-    process.stdout.write(`\nGhostCommit\n`);
-    process.stdout.write(`  Total  : ${Config.TotalCommits}\n`);
+    process.stdout.write(`\nGhostCommit - Auto Commit Tool\n`);
+    process.stdout.write(`\nAUTHOR     :    XTM26\n`);
+    process.stdout.write(`\nGITHUB     :    XTM26\n`);
+    process.stdout.write(`      Total  :    ${Config.TotalCommits}\n`);
     process.stdout.write(
-        `  Push   : ${Config.PushAfterAll ? "after all" : "CI handles"}\n\n`
+        `      Push   :    ${Config.PushAfterAll ? "after all" : "CI handles"}\n\n`
     );
 
     try {
