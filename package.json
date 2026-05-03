@@ -9,5 +9,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XTM26/GhostCommit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XTM26/GhostCommit/issues"
+  },
+  "homepage": "https://github.com/XTM26/GhostCommit#readme",
+  "dependencies": {
+    "jsonfile": "^6.2.1",
+    "moment": "^2.30.1",
+    "simple-git": "^3.36.0"
+  }
 }
