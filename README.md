@@ -20,9 +20,11 @@
 ## Preview
 
 ```
-GhostCommit
-  Total  : 100
-  Push   : after all
++ GhostCommit: Auto Commit Tool +
+  + AUTHOR : XTM26
+  + GITHUB : XTM26
+    Total  : 100
+    Push   : after all
 
   [########################################]  100.0% (100/100)
 

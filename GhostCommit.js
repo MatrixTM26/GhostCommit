@@ -1,6 +1,6 @@
 // GHOST COMMIT
 // AUTHOR : XTM26
-// GITHUB : XTM26
+// GITHUB : https://github.com/XTM26/GhostCommit
 
 import { writeFileSync } from "fs";
 import { spawnSync } from "child_process";
@@ -10,11 +10,11 @@ import { fileURLToPath } from "url";
 const Dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const Config = {
-    TotalCommits: 500,
+    TotalCommits: 100,
     DataFile: "./data.json",
     RetryAttempts: 3,
     PushAfterAll: process.env.CI !== "true",
-    Verbose: false
+    Verbose: true
 };
 
 const Git = Args => {
@@ -31,12 +31,12 @@ const Git = Args => {
 
 const GenerateRandomPastDate = () => {
     const Now = new Date();
-    const OneYearAgo = new Date(Now);
-    OneYearAgo.setFullYear(OneYearAgo.getFullYear() - 1);
+    const YearsAgo = new Date(Now);
+    YearsAgo.setFullYear(YearsAgo.getFullYear() - 1);
 
     const Result = new Date(
-        OneYearAgo.getTime() +
-            Math.floor(Math.random() * (Now.getTime() - OneYearAgo.getTime()))
+        YearsAgo.getTime() +
+            Math.floor(Math.random() * (Now.getTime() - YearsAgo.getTime()))
     );
 
     const Pad = N => String(N).padStart(2, "0");
@@ -49,7 +49,7 @@ const GenerateRandomPastDate = () => {
 const ProgressBar = (Current, Total, Width = 40) => {
     const Pct = Current / Total;
     const Filled = Math.round(Pct * Width);
-    const Bar = "#".repeat(Filled) + "-".repeat(Width - Filled);
+    const Bar = "#".repeat(Filled) + ".".repeat(Width - Filled);
     const Percent = (Pct * 100).toFixed(1).padStart(5);
     process.stdout.write(`\r  [${Bar}] ${Percent}% (${Current}/${Total})`);
 };
