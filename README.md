@@ -94,7 +94,7 @@ That is all. GhostCommit will generate commits, display a live progress bar, and
 
 ## Configuration
 
-Open `script.js` and edit the `Config` object at the top of the file:
+Open `GhostCommit.js` and edit the `Config` object at the top of the file:
 
 ```js
 const Config = {
