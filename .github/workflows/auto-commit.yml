@@ -1,9 +1,15 @@
 name: AutoCommit
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
     schedule:
         - cron: "0 12 * * *"
     workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
     AutoCommit:
@@ -27,7 +33,10 @@ jobs:
                   git config user.email "github-actions[bot]@users.noreply.github.com"
 
             - name: Run Auto Commit
-              run: node GhostCommit.js
+              run: |
+                node GhostCommit.js
+                git add .
+                git commit -m "chore: auto commit [skip ci]" || echo "No changes to commit"
 
             - name: Push
-              run: git push
+              run: git push origin HEAD || echo "Nothing to push"
