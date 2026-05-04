@@ -16,7 +16,7 @@
 
 <br />
 
-> GhostCommit fills your GitHub contribution graph with backdated commits, randomly distributed across the past year. Built to be minimal, stable, and safe to run for hundreds of commits without crashing.
+> GhostCommit fills your GitHub contribution graph with backdated commits, randomly distributed across the past year. Built to be minimal, stable, and safe to run for hundreds of commits at once without crashing.
 
 ---
 
