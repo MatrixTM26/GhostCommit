@@ -128,6 +128,25 @@ GhostCommit/
 
 ---
 
+<div align="left">
+
+## ◈ Support Me
+
+<p align="left">
+    If this project helps, you can support me here:
+</p>
+
+<a href="https://paypal.me/TeukuMaulana">
+  <img src="https://img.shields.io/badge/PayPal-Support%20Me-e11d48?style=for-the-badge&logo=paypal&logoColor=white&labelColor=0d1117" height="20" />
+</a>
+
+<a href="https://trakteer.id/matrixtm26">
+  <img src="https://img.shields.io/badge/Support-Trakteer-orange" height="20" />
+</a>
+</div>
+
+---
+
 <div align="center">
   <img src="https://img.shields.io/badge/Made%20by-XTM26-ff6b6b?style=for-the-badge&logo=github&logoColor=white" />
   <br /><br />
