@@ -141,7 +141,7 @@ GhostCommit/
 </a>
 
 <a href="https://trakteer.id/matrixtm26">
-  <img src="https://img.shields.io/badge/Support-Trakteer-orange" height="30" alt="Support me on Trakteer"/>
+  <img src="https://img.shields.io/badge/Support-Trakteer-orange" height="40" alt="Support me on Trakteer"/>
 </a>
 </div>
 
