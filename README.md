@@ -136,12 +136,12 @@ GhostCommit/
     If this project helps, you can support me here:
 </p>
 
-<a href="https://paypal.me/TeukuMaulana">
-  <img src="https://img.shields.io/badge/PayPal-Support%20Me-e11d48?style=for-the-badge&logo=paypal&logoColor=white&labelColor=0d1117" height="20" />
+<a href="https://ko-fi.com/matrixtm26" target="_blank">
+  <img src="https://ko-fi.com/img/githubbutton_sm.svg" height="30" alt="Support me on Ko-fi" />
 </a>
 
 <a href="https://trakteer.id/matrixtm26">
-  <img src="https://img.shields.io/badge/Support-Trakteer-orange" height="20" />
+  <img src="https://img.shields.io/badge/Support-Trakteer-orange" height="30" alt="Support me on Trakteer"/>
 </a>
 </div>
 
