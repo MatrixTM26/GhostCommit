@@ -137,12 +137,13 @@ GhostCommit/
 </p>
 
 <a href="https://ko-fi.com/matrixtm26" target="_blank">
-  <img src="https://ko-fi.com/img/githubbutton_sm.svg" height="30" alt="Support me on Ko-fi" />
+  <img src="https://ko-fi.com/img/githubbutton_sm.svg" height="20" alt="Support me on Ko-fi" />
 </a>
 
 <a href="https://trakteer.id/matrixtm26">
-  <img src="https://img.shields.io/badge/Support-Trakteer-orange" height="40" alt="Support me on Trakteer"/>
+  <img src="https://img.shields.io/badge/Support-Trakteer-orange" height="20" alt="Support me on Trakteer"/>
 </a>
+
 </div>
 
 ---
