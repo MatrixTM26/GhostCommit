@@ -1,6 +1,6 @@
 // GHOST COMMIT
-// AUTHOR : XTM26
-// GITHUB : https://github.com/XTM26/GhostCommit
+// AUTHOR : MatrixTM26
+// GITHUB : https://github.com/MatrixTM26/GhostCommit
 
 import { writeFileSync } from "fs";
 import { spawnSync } from "child_process";
@@ -92,8 +92,8 @@ const MakeCommitWithRetry = Index => {
 
 const Run = () => {
     process.stdout.write(`\n+ GhostCommit - Auto Commit Tool +\n`);
-    process.stdout.write(` + AUTHOR     :    XTM26\n`);
-    process.stdout.write(` + GITHUB     :    XTM26\n`);
+    process.stdout.write(` + AUTHOR     :    MatrixTM26\n`);
+    process.stdout.write(` + GITHUB     :    MatrixTM26\n`);
     process.stdout.write(`       Total  :    ${Config.TotalCommits}\n`);
     process.stdout.write(
         `       Push   :    ${Config.PushAfterAll ? "after all" : "CI handles"}\n\n`

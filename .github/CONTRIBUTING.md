@@ -47,7 +47,7 @@
 1. Clone your fork:
 
 ```bash
-    git clone https://github.com/XTM26/<repository-name>.git
+    git clone https://github.com/MatrixTM26/<repository-name>.git
     cd <repository-name>
 ```
 
@@ -212,7 +212,7 @@ Benefits:
 
 ### 16. Contact Me
 
-- [GitHub](https://github.com/XTM26)
+- [GitHub](https://github.com/MatrixTM26)
 - [Email](mailto:anonymous999tom7@gmail.com)
 
 ---
