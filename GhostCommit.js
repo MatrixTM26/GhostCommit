@@ -1,7 +1,3 @@
-// GHOST COMMIT
-// AUTHOR : MatrixTM26
-// GITHUB : https://github.com/MatrixTM26/GhostCommit
-
 import { writeFileSync } from "fs";
 import { spawnSync } from "child_process";
 import path from "path";
