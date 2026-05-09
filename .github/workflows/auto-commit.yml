@@ -1,0 +1,42 @@
+name: AutoCommit
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+    schedule:
+        - cron: "0 12 * * *"
+    workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+    AutoCommit:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 24
+
+            - name: Configure Git
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+            - name: Run Auto Commit
+              run: |
+                node GhostCommit.js
+                git add .
+                git commit -m "chore: auto commit [skip ci]" || echo "No changes to commit"
+
+            - name: Push
+              run: git push origin HEAD || echo "Nothing to push"

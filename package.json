@@ -1,0 +1,28 @@
+{
+  "name": "ghostcommit",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">   <img src=\"https://capsule-render.vercel.app/api?type=waving&color=0:0f0f0f,100:1a1a2e&height=200&section=header&text=GhostCommit&fontSize=60&fontColor=ffffff&fontAlignY=38&desc=Backfill%20your%20GitHub%20contribution%20graph%20silently&descAlignY=58&descSize=16&descColor=aaaaaa\" width=\"100%\" /> </div>",
+  "main": "GhostCommit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatrixTM26/GhostCommit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/MatrixTM26/GhostCommit/issues"
+  },
+  "homepage": "https://github.com/MatrixTM26/GhostCommit#readme",
+  "dependencies": {
+    "jsonfile": "^6.2.1",
+    "moment": "^2.30.1",
+    "random": "^5.4.1",
+    "simple-git": "^3.36.0"
+  },
+  "devDependencies": {}
+}
