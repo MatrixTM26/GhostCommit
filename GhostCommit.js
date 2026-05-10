@@ -1,3 +1,7 @@
+// GHOST COMMIT
+// AUTHOR : MatrixTM26
+// GITHUB : https://github.com/MatrixTM26
+
 import { writeFileSync } from "fs";
 import { spawnSync } from "child_process";
 import { createInterface } from "readline";
