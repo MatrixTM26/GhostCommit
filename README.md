@@ -23,19 +23,29 @@
 ## Preview
 
 ```
-+ GhostCommit: Auto Commit Tool +
-+ AUTHOR : MatrixTM26
-+ GITHUB : MatrixTM26
-  Total  : 100
-  Push   : after all
 
-  [########################################]  100.0% (100/100)
+      ________  ___ ___ ________    ____________________
+     /  _____/ /   |   \\_____  \  /   _____/\__    ___/
+    /   \  ___/    ~    \/   |   \ \_____  \   |    |
+    \    \_\  \    Y    /    |    \/        \  |    |
+     \______  /\___|_  /\_______  /_______  /  |____|
+            \/       \/         \/        \/
+                          COMMIT
 
-  ----------------------------------------
-  Success : 100 commits
-  Time    : 12.4s
-  Speed   : 8.1 commit/s
-  ----------------------------------------
+  Author   :  @MatrixTM26
+  Version  :  2.0
+
+  1 - Commit by Years
+  2 - Commit by Month
+  0 - Exit
+
+  :: Option > 1
+  ~[Years Count] > 2
+  ~[Commit Count] > 1000
+
+  Mode: Commit by Years (2y, 1000 commits)
+
+  [██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒]   4.8% (48/1000)
 ```
 
 ---
