@@ -142,17 +142,11 @@ GhostCommit/
 
 ## ◈ Support Me
 
-<p align="left">
-    If this project helps, you can support me here:
-</p>
+If this project helps, you can support me here:
 
-<a href="https://ko-fi.com/matriMatrixTM26" target="_blank">
-  <img src="https://ko-fi.com/img/githubbutton_sm.svg" height="20" alt="Support me on Ko-fi" />
-</a>
-
-<a href="https://trakteer.id/matriMatrixTM26">
-  <img src="https://img.shields.io/badge/Support-Trakteer-orange" height="20" alt="Support me on Trakteer"/>
-</a>
+[![Ko-fi](https://img.shields.io/badge/KO--FI-000000?style=for-the-badge&logo=kofi&logoColor=ff5f5f)](https://ko-fi.com/MatrixTM26)
+[![Trakteer](https://img.shields.io/badge/TRAKTEER-000000?style=for-the-badge&logo=buymeacoffee&logoColor=ff4444)](https://trakteer.id/MatrixTM26)
+[![PayPal](https://img.shields.io/badge/PAYPAL-000000?style=for-the-badge&logo=paypal&logoColor=00a2ff)](https://paypal.me/TeukuMaulana)
 
 </div>
 
