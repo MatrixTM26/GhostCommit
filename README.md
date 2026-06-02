@@ -6,7 +6,7 @@
 
   <img src="https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-1a1a2e?style=for-the-badge&logo=linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-AGPL--V3-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Author-MatrixTM26-ff6b6b?style=for-the-badge&logo=github&logoColor=white" />
   <a href="https://github.com/MatrixTM26/GhostCommit/stargazers">
     <img src="https://img.shields.io/github/stars/MatrixTM26/GhostCommit?style=for-the-badge&logo=apachespark&logoColor=white&color=f5a623" />
@@ -138,22 +138,16 @@ GhostCommit/
 
 ---
 
-<div align="left">
+## <img src="https://cdn.simpleicons.org/github/ff0000" width="18"> Credit
 
-## ◈ Support Me
+- **Author:** [@MatrixTM26](https://github.com/MatrixTM26)
 
-If this project helps, you can support me here:
+## <img src="https://cdn.simpleicons.org/githubsponsors/ff0000" width="18"> Support Me
 
-[![Ko-fi](https://img.shields.io/badge/KO--FI-000000?style=for-the-badge&logo=kofi&logoColor=ff5f5f)](https://ko-fi.com/MatrixTM26)
-[![Trakteer](https://img.shields.io/badge/TRAKTEER-000000?style=for-the-badge&logo=buymeacoffee&logoColor=ff4444)](https://trakteer.id/MatrixTM26)
-[![PayPal](https://img.shields.io/badge/PAYPAL-000000?style=for-the-badge&logo=paypal&logoColor=00a2ff)](https://paypal.me/TeukuMaulana)
-
-</div>
+[![Ko-fi](https://img.shields.io/badge/KO--FI-000000?style=for-the-badge&logo=kofi&logoColor=ff0000)](https://ko-fi.com/MatrixTM26)
+[![Trakteer](https://img.shields.io/badge/TRAKTEER-000000?style=for-the-badge&logo=buymeacoffee&logoColor=ff0000)](https://trakteer.id/MatrixTM26)
+[![PayPal](https://img.shields.io/badge/PAYPAL-000000?style=for-the-badge&logo=paypal&logoColor=ff0000)](https://paypal.me/TeukuMaulana)
 
 ---
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Made%20by-MatrixTM26-ff6b6b?style=for-the-badge&logo=github&logoColor=white" />
-  <br /><br />
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,100:0f0f0f&height=100&section=footer" width="100%" />
-</div>
+<p align="center">Copyright &copy;2023-2026 MatrixTM26 • All Rights Reserved</p>
