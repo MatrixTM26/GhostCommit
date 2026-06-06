@@ -214,7 +214,7 @@ Benefits:
 
 - [GitHub](https://github.com/MatrixTM26)
 - [Email](mailto:anonymous999tm@gmail.com)
-- [Instagram](https://instagram.com/xtm26.xp)
+- [Instagram](https://instagram.com/matrixtm26.xp)
 
 ---
 
